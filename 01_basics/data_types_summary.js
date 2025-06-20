@@ -15,7 +15,7 @@ const bigNumber = 114511458553612257232551254422n
 const isLoggedIn = false
 const str = '123'
 const temp = null
-const check;
+let check;
 const id = Symbol("23")
 const id2 = Symbol("23")
 console.log(id == id2); // false
@@ -31,3 +31,30 @@ let myObj = {
 const myFunction = function() {
     console.log("hello world")
 }
+
+/* ************************************************** */
+// Stack (Primitive) & Heap (Non-Primitive)
+
+let aString = "Anjani"
+let bString = aString
+bString = "Something else" 
+
+console.log(aString);
+console.log(bString);
+// Above a copy of aString will be given to bString, changing bString doesn't affect aString 
+// This is happening because the aboves are primitive and are stored in stack
+
+let userOne = {
+    email: "user1@gmail.com",
+    upi: "user1upi@yesbank"
+}
+
+let userTwo = userOne
+
+userTwo.upi = "user2upi@sbibank"
+
+console.log(userOne);
+console.log(userTwo);
+
+// The above implementation will change the values in both userOne and userTwo as they are stored in heap and are non-primitive.
+// The values are not copied, a reference of that variable is given.
