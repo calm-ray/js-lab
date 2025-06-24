@@ -43,3 +43,19 @@ console.log(Object.values(obj1)); // returns array with all values in object
 console.log(Object.entries(obj1)); // returns array or array with key at 0th position and value at 1st position;  [ '1', 'a' ], [ '2', 'b' ] ]
 
 console.log(obj1.hasOwnProperty('1'))
+
+/***** De-Structuring *****/
+
+const course = {
+    courseName: "DSA",
+    price: 999,
+    courseInstructor: "Someone"
+}
+
+const {courseName, price, courseInstructor: instructor} = course
+
+console.log(course.courseName)
+console.log(courseName);
+
+console.log(course.courseInstructor)
+console.log(instructor);
