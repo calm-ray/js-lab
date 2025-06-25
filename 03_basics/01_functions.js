@@ -36,3 +36,32 @@ function loginUserMessage(username = "sam") {
 console.log(loginUserMessage("anjani")) // anjani just logged in
 
 console.log(loginUserMessage()) // sam just logged in after we assign a default value as sam
+
+function calculateCartPrice(val1, val2, ...num) {
+    return num
+}
+
+console.log(calculateCartPrice(200, 400, 500, 2000)); // [500, 2000], val1 = 200, val2 = 400
+
+const user = {
+    username: "Anjani",
+    price: 299
+}
+
+function handleObject(anyObj) {
+    console.log(`${anyObj.username}, the amount is ${anyObj.price}`);
+}
+
+// handleObject(user) 
+handleObject({
+    username: "Sam",
+    price: 300
+})
+
+const myArr = [200, 300, 400, 500]
+
+function printArr(anyArr) {
+    console.log(anyArr);
+}
+
+printArr(myArr)
