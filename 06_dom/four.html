@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+    <style>
+        .bg-black {
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName) {
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage('Python')
+    addLanguage('Typescript')
+    // The above solution traverses the whole DOM tree. The optimized solution is given below:
+
+    function addLanguageOptimized(langName) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(`${langName}`))
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguageOptimized('GoLang')
+
+    // Edit
+    const secondLang = document.querySelector('li:nth-child(2)')
+    const newLi = document.createElement('li')
+    newLi.textContent = "Mojo"
+    secondLang.replaceWith(newLi)
+
+    const firstLang = document.querySelector('li:first-child')
+    firstLang.outerHTML = '<li>Java</li>'
+
+    // Delete
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+</script>
+</html>
